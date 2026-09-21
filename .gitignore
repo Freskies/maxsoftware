@@ -1,0 +1,38 @@
+# Rust: file generati dalla compilazione
+/target/
+**/*.rs.bk
+
+# Configurazione locale e segreti
+.env
+.env.*
+!.env.example
+/secrets/
+
+# Dati generati durante l'esecuzione
+/data/
+/logs/
+/backups/
+*.log
+
+# Database SQLite e relativi file temporanei
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite3
+*.sqlite3-journal
+*.sqlite3-shm
+*.sqlite3-wal
+
+# Configurazione locale JetBrains / RustRover
+/.idea/
+*.iml
+
+# File del sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini

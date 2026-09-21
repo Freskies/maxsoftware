@@ -1,0 +1,15 @@
+[package]
+name = "maxsoftware"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+
+[profile.dev]
+debug = "line-tables-only"
+
+[dependencies]
+tokio = { version = "1.53.1", features = ["rt", "rt-multi-thread", "macros", "signal"] }
+tracing-subscriber = "0.3.23"
+axum = "0.8.9"
+tracing = "0.1.44"
+askama = "0.16.1"

@@ -1,0 +1,6 @@
+# Normalizza i file di testo e usa LF nella copia di lavoro
+* text=auto eol=lf
+
+# Script Windows
+*.bat text eol=crlf
+*.cmd text eol=crlf
