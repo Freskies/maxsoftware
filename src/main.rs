@@ -27,7 +27,14 @@ fn init_tracing() {
 }
 
 async fn bind_tcp_listener() -> Result<TcpListener, Box<dyn Error>> {
-	let listener = TcpListener::bind("0.0.0.0:8000").await?;
+	let address = match std::env::var("BIND_ADDRESS") {
+		Ok(value) => value,
+		Err(std::env::VarError::NotPresent) => {
+			"0.0.0.0:3000".to_owned()
+		}
+		Err(error) => return Err(error.into()),
+	};
+	let listener = TcpListener::bind(address.as_str()).await?;
 	tracing::info!(address = %listener.local_addr()?, "Server started.");
 	Ok(listener)
 }
