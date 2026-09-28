@@ -1,0 +1,49 @@
+@layer components {
+	.site-footer {
+		padding-inline: var(--page-gutter);
+		padding-block-start: 2rem;
+		padding-block-end: calc(var(--navigation-clearance) + env(safe-area-inset-bottom, 0px));
+
+		background: var(--color-background);
+		border-block-start: 1px solid var(--color-border);
+
+		color: var(--color-text-muted);
+		font-size: var(--font-size-small);
+		line-height: 1.6;
+	}
+
+	.site-footer-content {
+		max-inline-size: 69rem;
+		margin-inline: auto;
+	}
+
+	.footer-information {
+		display: grid;
+		gap: 0.75rem;
+		list-style: none;
+	}
+
+	.footer-contacts {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1ch;
+	}
+
+	.footer-information a {
+		color: inherit;
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+	}
+
+	@media (hover: hover) {
+		.footer-information a:hover {
+			color: var(--color-accent);
+		}
+	}
+
+	@media (width >= 48rem) {
+		.site-footer {
+			padding-block-end: 2rem;
+		}
+	}
+}

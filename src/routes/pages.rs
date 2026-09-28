@@ -1,26 +1,23 @@
-use crate::templates::{
-	HomeContentTemplate, HomeTemplate, NotFoundTemplate, SpeedyWebContentTemplate,
-	SpeedyWebTemplate,
-};
+use crate::templates::{AIContentTemplate, AITemplate, PrivacyPolicyTemplate, HomeContentTemplate, HomeTemplate, NotFoundTemplate, SpeedyWebContentTemplate, SpeedyWebTemplate};
 use askama::Template;
 use axum::http::header::VARY;
 use axum::http::{HeaderMap, HeaderValue, StatusCode};
 use axum::response::{Html, IntoResponse, Response};
 
 pub async fn home(headers: HeaderMap) -> Response {
-	render_page(&headers, HomeTemplate, HomeContentTemplate)
+	render_page_or_content(&headers, HomeTemplate, HomeContentTemplate)
 }
 
 pub async fn speedyweb(headers: HeaderMap) -> Response {
-	render_page(&headers, SpeedyWebTemplate, SpeedyWebContentTemplate)
-}
-
-pub async fn customized(headers: HeaderMap) -> Response {
-	render_page(&headers, HomeTemplate, HomeContentTemplate)
+	render_page_or_content(&headers, SpeedyWebTemplate, SpeedyWebContentTemplate)
 }
 
 pub async fn ai(headers: HeaderMap) -> Response {
-	render_page(&headers, HomeTemplate, HomeContentTemplate)
+	render_page_or_content(&headers, AITemplate, AIContentTemplate)
+}
+
+pub async fn privacy_policy() -> Response {
+	render_page(PrivacyPolicyTemplate, false)
 }
 
 pub async fn not_found_page() -> Response {
@@ -51,24 +48,23 @@ pub async fn not_found(headers: HeaderMap) -> Response {
 	not_found_page().await
 }
 
-pub fn render_page<P: Template, C: Template>(headers: &HeaderMap, page: P, content: C) -> Response {
+pub fn render_page_or_content<P: Template, C: Template>(headers: &HeaderMap, page: P, content: C) -> Response {
 	let wants_content: bool = is_request_from_htmx(headers);
-
-	let result = if wants_content {
-		content.render()
+	if wants_content {
+		render_page(content, true)
 	} else {
-		page.render()
-	};
+		render_page(page, false)
+	}
+}
+
+pub fn render_page<T: Template>(page: T, partial: bool) -> Response {
+	let result = page.render();
 
 	let mut response = match result {
 		Ok(html) => Html(html).into_response(),
 		Err(error) => {
-			let template_name = if wants_content {
-				std::any::type_name::<C>()
-			} else {
-				std::any::type_name::<P>()
-			};
-			tracing::error!(%error, template = template_name, partial = wants_content, "Failed to render page");
+			let template_name = std::any::type_name::<T>();
+			tracing::error!(%error, template = template_name, partial, "Failed to render page");
 			(
 				StatusCode::INTERNAL_SERVER_ERROR,
 				"Impossibile caricare la pagina",

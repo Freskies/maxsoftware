@@ -1,12 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	{% block title %}
 	<title>MaxSoftware</title>
 	{% endblock %}
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="/static/css/components/navigation.css">
+	<link rel="stylesheet" href="/static/css/components/content.css">
+	<link rel="stylesheet" href="/static/css/pages/home.css">
+	<link rel="stylesheet" href="/static/css/pages/speedyweb.css">
+	<link rel="stylesheet" href="/static/css/pages/customized.css">
+	<link rel="stylesheet" href="/static/css/components/footer.css">
 	<script src="https://cdn.jsdelivr.net/npm/htmx.org@4.0.0/dist/htmx.min.js" defer></script>
+	<script src="/static/js/navigation.js" defer></script>
 </head>
 <body>
 {% include "fragments/floating_nav.html" %}
@@ -14,5 +22,6 @@
 <main id="main-content" hx-history-elt>
 	{% block content %}{% endblock %}
 </main>
+{% include "fragments/footer.html" %}
 </body>
 </html>

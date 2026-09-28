@@ -1,0 +1,237 @@
+@layer pages {
+	.home-page {
+		--home-section-space: 4.5rem;
+
+		display: grid;
+		gap: var(--home-section-space);
+		padding-block: 0 2rem;
+
+		h1 {
+			max-inline-size: 18ch;
+		}
+
+		p {
+			max-inline-size: 65ch;
+		}
+
+		.home-hero {
+			position: relative;
+			isolation: isolate;
+			margin-inline: calc(-1 * var(--page-gutter));
+			margin-block-start: calc(-1 * var(--page-gutter));
+			padding: 1.25rem var(--page-gutter) 4.5rem;
+
+			color: var(--color-surface);
+			background: radial-gradient(ellipse at 100% 25%, rgb(255 255 255 / 14%), transparent 65%),
+			linear-gradient(145deg, var(--color-accent), var(--color-accent-strong));
+			border-end-start-radius: 50% 2.5rem;
+			border-end-end-radius: 50% 2.5rem;
+		}
+
+		.hero-brand {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.6rem;
+			min-block-size: 2.75rem;
+
+			color: inherit;
+			font-size: 1.125rem;
+			font-weight: 650;
+			line-height: 1.2;
+			text-decoration: none;
+		}
+
+		.hero-brand img {
+			display: block;
+			inline-size: 2rem;
+			block-size: auto;
+		}
+
+		.home-hero-content {
+			display: grid;
+			justify-items: center;
+			gap: 1.5rem;
+			padding-block-start: 2.75rem;
+			text-align: center;
+		}
+
+		.home-hero-title {
+			max-inline-size: 16ch;
+			color: inherit;
+		}
+
+		.home-hero-description {
+			max-inline-size: 36ch;
+			color: rgb(255 255 255 / 90%);
+			text-wrap: pretty;
+		}
+
+		.home-hero-cta {
+			margin-block-start: 0.25rem;
+			max-inline-size: 100%;
+			background: var(--color-surface);
+			color: var(--color-accent-strong);
+		}
+
+		.home-hero a:focus-visible {
+			outline-color: var(--color-surface);
+		}
+
+		.home-section-heading {
+			display: grid;
+			gap: 0.75rem;
+		}
+
+		.home-customized,
+		.home-about {
+			display: grid;
+			justify-items: start;
+			gap: 1.25rem;
+		}
+
+		.home-customized {
+			margin-inline: calc(-1 * var(--page-gutter));
+			padding: 3rem var(--page-gutter);
+			background: var(--color-surface-hover);
+		}
+
+		.home-about {
+			padding-block-end: 1rem;
+		}
+
+		.text-link,
+		.home-customized .text-link {
+			margin-block-start: 0.25rem;
+		}
+
+		.text-link span,
+		.home-customized .text-link span {
+			flex-shrink: 0;
+		}
+
+		.home-speedyweb {
+			display: grid;
+			gap: 1rem;
+		}
+
+		.speedyweb-intro {
+			justify-self: center;
+			text-align: center;
+			color: var(--color-text);
+		}
+
+		.speedyweb-card {
+			display: grid;
+			gap: 1.25rem;
+			padding: 1.5rem;
+			border-radius: 1.75rem;
+
+			color: var(--color-surface);
+			background: radial-gradient(ellipse at top right, rgb(255 255 255 / 16%), transparent 70%), var(--color-accent);
+		}
+
+		.speedyweb-card-heading {
+			display: flex;
+			align-items: center;
+			gap: 0.6rem;
+		}
+
+		.speedyweb-card-heading h2 {
+			color: inherit;
+			font-size: 1.875rem;
+			line-height: 1.15;
+			font-weight: 500;
+		}
+
+		.speedyweb-card-icon {
+			inline-size: 2.4rem;
+			block-size: 2.4rem;
+			flex-shrink: 0;
+
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 1.8;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+		}
+
+		.speedyweb-card-description {
+			max-inline-size: 32ch;
+			color: rgb(255 255 255 / 90%);
+		}
+
+		.speedyweb-card-cta {
+			justify-self: start;
+			max-inline-size: 100%;
+
+			background: var(--color-surface);
+			color: var(--color-accent-strong);
+		}
+
+		.speedyweb-card-cta:focus-visible {
+			outline-color: var(--color-surface);
+		}
+
+		.slogan span {
+			display: block;
+			text-wrap: balance;
+		}
+
+		.home-contact {
+			display: grid;
+			justify-items: start;
+			gap: 1.25rem;
+			margin-inline: calc(-1 * var(--page-gutter));
+			padding: 3rem var(--page-gutter);
+			background: var(--color-surface-hover);
+		}
+
+		.home-contact-details {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1rem;
+			inline-size: 100%;
+			max-inline-size: 20rem;
+			margin-top: 0.6rem;
+		}
+
+		.home-contact-details .button {
+			position: relative;
+			min-inline-size: 0;
+
+			justify-content: flex-start;
+			text-align: start;
+
+			padding-inline-start: 2.75rem;
+			padding-inline-end: 0.75rem;
+		}
+
+		.home-contact-details .button-icon {
+			position: absolute;
+			inset-inline-start: 0.65rem;
+			inset-block-start: 50%;
+			transform: translateY(-50%);
+
+			inline-size: 1.5rem;
+			block-size: 1.5rem;
+		}
+	}
+
+	@media (hover: hover) {
+		.home-page .home-hero-cta:hover {
+			background: var(--color-surface-hover);
+			color: var(--color-accent-strong);
+		}
+
+		.home-page .speedyweb-card-cta:hover {
+			background: var(--color-surface-hover);
+			color: var(--color-accent-strong);
+		}
+	}
+
+	@media (width >= 48rem) {
+		.home-page .home-hero {
+			margin-block-start: 0;
+		}
+	}
+}

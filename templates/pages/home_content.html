@@ -1,6 +1,165 @@
 {% include "pages/home_title.html" %}
 
-<section>
-	<h1>MaxSoftware</h1>
-	<p>Realizziamo software per la tua attività.</p>
-</section>
+<div class="home-page">
+	<header class="home-hero">
+		<a class="hero-brand" href="/" aria-label="MaxSoftware — Home">
+			<img
+				src="/static/images/maxsoftware-symbol-white.svg"
+				width="120"
+				height="156"
+				alt=""
+			>
+			<span>MaxSoftware</span>
+		</a>
+
+		<div class="home-hero-content">
+			<h1 class="home-hero-title">
+				Il software giusto per il tuo lavoro
+			</h1>
+
+			<p class="lead home-hero-description">
+				Ti affianchiamo nell’utilizzo quotidiano,
+				con assistenza e supporto nel tempo.
+			</p>
+
+			<a class="button home-hero-cta" href="#home-contact" data-scroll-to>
+				Parlaci del tuo progetto
+			</a>
+		</div>
+	</header>
+
+	<section class="home-about">
+		<header class="home-section-heading">
+			<p class="eyebrow">Chi siamo</p>
+
+			<h2 class="slogan">
+				<span>Conosciamo il software,</span>
+				<span>Vogliamo conoscere il tuo lavoro</span>
+			</h2>
+		</header>
+
+		<p>
+			Dal 1998, MaxSoftware riunisce professionisti informatici
+			con un obiettivo comune: sviluppare strumenti affidabili,
+			semplici da usare e utili alle aziende.
+		</p>
+
+		<p>
+			Ogni progetto parte dall’ascolto. Ci confrontiamo con chi
+			userà il software per comprenderne le attività, individuare
+			le difficoltà e scegliere insieme le soluzioni.
+			Condividiamo competenze e idee, spiegando con chiarezza
+			le possibilità e le scelte tecniche.
+		</p>
+
+		<p>
+			Seguiamo il cliente dallo sviluppo alla formazione,
+			fino all’assistenza quotidiana. Continuiamo ad aggiornare
+			le nostre competenze e a migliorare il software,
+			perché possa accompagnare l’azienda anche quando
+			le sue esigenze cambiano.
+		</p>
+	</section>
+
+	<section class="home-speedyweb">
+		<p class="eyebrow speedyweb-intro">
+			Il nostro prodotto di punta
+		</p>
+
+		<div class="speedyweb-card">
+			<header class="speedyweb-card-heading">
+				<svg
+					class="speedyweb-card-icon"
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+					focusable="false"
+				>
+					<rect x="3" y="4" width="18" height="16" rx="4"/>
+					<path d="M3 9h18"/>
+					<path d="M8 14h5"/>
+				</svg>
+
+				<h2>SpeedyWeb</h2>
+			</header>
+
+			<p class="speedyweb-card-description">
+				Il gestionale per spedizioni e logistica,
+				adattabile alla tua azienda.
+			</p>
+
+			<p class="speedyweb-card-description">
+				Gestisci pratiche, documenti, preventivi, fatturazione
+				e magazzino con moduli integrati, configurabili
+				secondo le esigenze della tua azienda.
+			</p>
+
+			<a
+				class="button speedyweb-card-cta"
+				href="/speedyweb"
+				hx-get="/speedyweb"
+				hx-target="#main-content"
+				hx-swap="innerHTML"
+				hx-push-url="true"
+			>
+				Scopri SpeedyWeb
+				<span aria-hidden="true">→</span>
+			</a>
+		</div>
+	</section>
+
+	<section id="home-contact" class="home-contact">
+		<header class="home-section-heading">
+			<p class="eyebrow">Software su misura</p>
+			<h2>Il tuo progetto comincia da una conversazione</h2>
+		</header>
+
+		<p class="lead">
+			Un’idea da realizzare, un’attività da semplificare,
+			strumenti da far comunicare.
+		</p>
+
+		<p>
+			Sviluppiamo software dedicati e integrazioni per le esigenze
+			della tua azienda. Raccontaci come lavori e cosa vorresti
+			migliorare: possiamo partire da un primo confronto,
+			anche senza un progetto già definito.
+		</p>
+
+		<p>
+			Vuoi saperne di più su SpeedyWeb?
+			Scrivici per capire insieme se è adatto alla tua attività.
+		</p>
+
+		<address class="home-contact-details">
+			<a class="button" href="mailto:info@maxsoftware.it">
+				<svg
+					class="button-icon"
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+					focusable="false"
+				>
+					<rect x="3" y="5" width="18" height="14" rx="3"/>
+					<path d="m4 7 8 6 8-6"/>
+				</svg>
+				<span>Scrivici</span>
+			</a>
+
+			<a
+				class="button button-secondary"
+				href="tel:+390544527305"
+				aria-label="Chiamaci al numero 0544 527305"
+			>
+				<svg
+					class="button-icon"
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+					focusable="false"
+				>
+					<path
+						d=" M22 16.92v3 a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67 A2 2 0 0 1 4.11 2h3 a2 2 0 0 1 2 1.72 c.13.96.36 1.9.69 2.79 a2 2 0 0 1-.45 2.11L8.09 9.89 a16 16 0 0 0 6 6l1.27-1.27 a2 2 0 0 1 2.11-.45 c.89.33 1.83.56 2.79.69 A2 2 0 0 1 22 16.92Z"/>
+				</svg>
+				<span>Chiamaci</span>
+			</a>
+		</address>
+	</section>
+</div>

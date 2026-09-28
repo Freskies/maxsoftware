@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="156" viewBox="0 0 120 156" fill="none" color="#0340b2" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">MaxSoftware: M integrata in un pacco</title>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Spigoli superiori del pacco -->
+    <path d="M26 44 60 14 94 44" stroke-width="7"/>
+    <!-- La M forma le due facce del pacco -->
+    <path d="M22 104V58L60 88 98 58V104" stroke-width="12"/>
+    <!-- Spigoli inferiori e costa centrale -->
+    <path d="M30 120 60 142 90 120M60 111V142" stroke-width="7"/>
+  </g>
+</svg>

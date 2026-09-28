@@ -1,6 +1,7 @@
 pub mod templates;
 pub mod routes;
 pub mod middleware;
+pub mod config;
 
 use axum::Router;
 use std::error::Error;
@@ -26,7 +27,7 @@ fn init_tracing() {
 }
 
 async fn bind_tcp_listener() -> Result<TcpListener, Box<dyn Error>> {
-	let listener = TcpListener::bind("127.0.0.1:3000").await?;
+	let listener = TcpListener::bind("0.0.0.0:3000").await?;
 	tracing::info!(address = %listener.local_addr()?, "Server started.");
 	Ok(listener)
 }
